@@ -4,48 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Unique Website Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        section {
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #3498db;
-        }
-
-        p {
-            color: #555;
-        }
-
-        .bar-chart {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .bar {
-            background-color: #3498db;
-            width: 30px;
-            margin: 0 5px;
-            transition: height 0.5s ease-in-out;
-        }
+        /* ... (Your existing styles) ... */
     </style>
 </head>
 <body>
@@ -58,17 +19,29 @@
   <section id="bestCompanies">
     <h2>Top 5 Best Companies Around the World</h2>
     <p>Detailed description about the best companies...</p>
-    <div class="bar-chart" id="chartCompanies"></div>
+    <canvas id="chartCompanies" width="400" height="200"></canvas>
     <script>
-        // JavaScript code for generating a simple bar chart
-        const chartCompanies = document.getElementById('chartCompanies');
+        // JavaScript code for generating a bar chart using charts.js
+        const ctxCompanies = document.getElementById('chartCompanies').getContext('2d');
         const dataCompanies = [20, 35, 45, 25, 30];
 
-        dataCompanies.forEach((value, index) => {
-            const bar = document.createElement('div');
-            bar.style.height = `${value}px`;
-            bar.classList.add('bar');
-            chartCompanies.appendChild(bar);
+        new Chart(ctxCompanies, {
+            type: 'bar',
+            data: {
+                labels: ['Company 1', 'Company 2', 'Company 3', 'Company 4', 'Company 5'],
+                datasets: [{
+                    label: 'Performance',
+                    backgroundColor: '#3498db',
+                    data: dataCompanies,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
     </script>
   </section>
@@ -76,17 +49,29 @@
   <section id="bestCryptocurrencies">
     <h2>Top 5 Best Cryptocurrencies</h2>
     <p>Detailed description about the best cryptocurrencies...</p>
-    <div class="bar-chart" id="chartCryptocurrencies"></div>
+    <canvas id="chartCryptocurrencies" width="400" height="200"></canvas>
     <script>
-        // JavaScript code for generating a simple bar chart
-        const chartCryptocurrencies = document.getElementById('chartCryptocurrencies');
+        // JavaScript code for generating a bar chart using charts.js
+        const ctxCryptocurrencies = document.getElementById('chartCryptocurrencies').getContext('2d');
         const dataCryptocurrencies = [15, 25, 40, 20, 35];
 
-        dataCryptocurrencies.forEach((value, index) => {
-            const bar = document.createElement('div');
-            bar.style.height = `${value}px`;
-            bar.classList.add('bar');
-            chartCryptocurrencies.appendChild(bar);
+        new Chart(ctxCryptocurrencies, {
+            type: 'bar',
+            data: {
+                labels: ['Crypto 1', 'Crypto 2', 'Crypto 3', 'Crypto 4', 'Crypto 5'],
+                datasets: [{
+                    label: 'Performance',
+                    backgroundColor: '#3498db',
+                    data: dataCryptocurrencies,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
         });
     </script>
   </section>
