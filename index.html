@@ -6,7 +6,39 @@
     <title>Your Unique Website Title</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* ... (Your existing styles) ... */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        p {
+            color: #555;
+        }
+
+        canvas {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -76,7 +108,95 @@
     </script>
   </section>
 
-  <!-- Repeat the above script for other sections as needed -->
+  <section id="bestChessWebsites">
+    <h2>Top 5 Best Chess Websites</h2>
+    <p>Detailed description about the best chess websites...</p>
+    <canvas id="chartChessWebsites" width="400" height="200"></canvas>
+    <script>
+        // JavaScript code for generating a bar chart using charts.js
+        const ctxChessWebsites = document.getElementById('chartChessWebsites').getContext('2d');
+        const dataChessWebsites = [10, 15, 30, 18, 25];
+
+        new Chart(ctxChessWebsites, {
+            type: 'bar',
+            data: {
+                labels: ['Chess Site 1', 'Chess Site 2', 'Chess Site 3', 'Chess Site 4', 'Chess Site 5'],
+                datasets: [{
+                    label: 'Performance',
+                    backgroundColor: '#3498db',
+                    data: dataChessWebsites,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+  </section>
+
+  <section id="bestAssetsManagement">
+    <h2>Top 5 Best Assets Management Companies</h2>
+    <p>Detailed description about the best assets management companies...</p>
+    <canvas id="chartAssetsManagement" width="400" height="200"></canvas>
+    <script>
+        // JavaScript code for generating a bar chart using charts.js
+        const ctxAssetsManagement = document.getElementById('chartAssetsManagement').getContext('2d');
+        const dataAssetsManagement = [25, 40, 30, 20, 35];
+
+        new Chart(ctxAssetsManagement, {
+            type: 'bar',
+            data: {
+                labels: ['Asset Management 1', 'Asset Management 2', 'Asset Management 3', 'Asset Management 4', 'Asset Management 5'],
+                datasets: [{
+                    label: 'Performance',
+                    backgroundColor: '#3498db',
+                    data: dataAssetsManagement,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+  </section>
+
+  <section id="famousInvestmentCompanies">
+    <h2>Top 5 Most Famous Investment Companies</h2>
+    <p>Detailed description about the most famous investment companies...</p>
+    <canvas id="chartInvestmentCompanies" width="400" height="200"></canvas>
+    <script>
+        // JavaScript code for generating a bar chart using charts.js
+        const ctxInvestmentCompanies = document.getElementById('chartInvestmentCompanies').getContext('2d');
+        const dataInvestmentCompanies = [18, 30, 25, 15, 40];
+
+        new Chart(ctxInvestmentCompanies, {
+            type: 'bar',
+            data: {
+                labels: ['Investment Company 1', 'Investment Company 2', 'Investment Company 3', 'Investment Company 4', 'Investment Company 5'],
+                datasets: [{
+                    label: 'Performance',
+                    backgroundColor: '#3498db',
+                    data: dataInvestmentCompanies,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+  </section>
 
 </body>
 </html>
